@@ -3,7 +3,7 @@
 	Plugin Name: KC Last Active Time
 	Plugin URI: http://krumch.com/kc-last-active-time.html
 	Description: A "last active time" monitor for members
-	Version: 1.0
+	Version: 20120712
 	Author: Krum Cheshmedjiev
 	Author URI: http://krumch.com
 	Tested up to: 3.4.1
