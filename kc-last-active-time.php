@@ -3,7 +3,7 @@
 	Plugin Name: KC Last Active Time
 	Plugin URI: http://krumch.com/kc-last-active-time.html
 	Description: A "last active time" monitor for members
-	Version: 20120712
+	Version: 20120811
 	Author: Krum Cheshmedjiev
 	Author URI: http://krumch.com
 	Tested up to: 3.4.1
@@ -30,6 +30,7 @@ function kc_lat_deactivate() {
 register_deactivation_hook( __FILE__, 'kc_lat_deactivate' );
 
 function kc_lat_admin() {
+	echo '<div id="kclat" style="width:80%;float:left;border-right:1px dotted black;overflow-x:auto;">';
 	$getinfo = 1;
 	if(isset($_POST['Submit'])) {
 		if('' == $_POST['kc_lat_format']) {
@@ -67,7 +68,12 @@ Same parameter as function kc_lat_get().
 		</table>
 		</p>
 			</form>
-</div>
+</div><div style="float:left;width:19.9%;height:100%"><iframe id="kcnews" width="100%" height="500" src="http://krumch.com/kc_news.php?src=kc_lat"></iframe></div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+	jQuery('#kcnews').css('height', jQuery('#kclat').css('height'));
+/* ]]> */
+</script>
 <?php
 }
 
