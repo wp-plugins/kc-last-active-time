@@ -3,14 +3,15 @@ Contributors: krumch
 Donate link: http://krumch.com/kc-last-active-time.html
 Tags: last active time, monitor, active, activity, time, member, members, members info, developers tools, tool
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 20120712
+Tested up to: 3.4.2
+Stable tag: 20120921
 
 A "last active time" monitor for members.
 
 == Description ==
 
 <p>When use WordPress as CMS sometimes it needs to show when users was online last time. No such feature in the core of WordPress, so this plugin adds it.</p>
+<p>Feel free to review all my <a href="http://krumch.com/category/wp_plugins/" target="_blank">other plugins</a>.</p>
 
 == Installation ==
 
@@ -34,6 +35,9 @@ No questions, so far. Ask me, I will answer.
 
 == Changelog ==
 
+= 20120921 =
+* Minor updates
+
 = 20120811 =
 * Documentation extended with "Usage" section
 * Right side "News panel" added
@@ -42,6 +46,12 @@ No questions, so far. Ask me, I will answer.
 * The very first versions.
 
 == Upgrade Notice ==
+
+= 20120921 =
+Fix error message
+
+= 20120811 =
+Give "KC look and feel" to all my plugins
 
 = 20120712 =
 Upgrade from scratch to initial version :-)

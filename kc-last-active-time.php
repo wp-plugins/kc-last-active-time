@@ -3,10 +3,10 @@
 	Plugin Name: KC Last Active Time
 	Plugin URI: http://krumch.com/kc-last-active-time.html
 	Description: A "last active time" monitor for members
-	Version: 20120811
+	Version: 20120921
 	Author: Krum Cheshmedjiev
 	Author URI: http://krumch.com
-	Tested up to: 3.4.1
+	Tested up to: 3.4.2
 	Requires at least: 3.0
 	Requires: WordPress® 3.0+, PHP 5.2+
 	Tags: last active time, monitor, active, activity, time, member, members, members info, developers tools, tool
@@ -35,7 +35,7 @@ function kc_lat_admin() {
 	if(isset($_POST['Submit'])) {
 		if('' == $_POST['kc_lat_format']) {
 ?>
-				<div class="updated"><p><strong>You must provide Date format.</strong></p></div>
+				<div class="error"><p><strong>You must provide Date format.</strong></p></div>
 <?php
 		} else {
 			$kc_lat_options['save'] = (int)$_POST['kc_lat_save'];
@@ -71,7 +71,7 @@ Same parameter as function kc_lat_get().
 </div><div style="float:left;width:19.9%;height:100%"><iframe id="kcnews" width="100%" height="500" src="http://krumch.com/kc_news.php?src=kc_lat"></iframe></div>
 <script type='text/javascript'>
 /* <![CDATA[ */
-	jQuery('#kcnews').css('height', jQuery('#kclat').css('height'));
+	jQuery('#kcnews').css('height', jQuery('#kcnews').parent().parent().css('height'));
 /* ]]> */
 </script>
 <?php
