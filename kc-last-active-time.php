@@ -3,7 +3,7 @@
 	Plugin Name: KC Last Active Time
 	Plugin URI: http://krumch.com/kc-last-active-time.html
 	Description: A "last active time" monitor for members
-	Version: 20120921
+	Version: 20121014
 	Author: Krum Cheshmedjiev
 	Author URI: http://krumch.com
 	Tested up to: 3.4.2
@@ -12,10 +12,7 @@
 	Tags: last active time, monitor, active, activity, time, member, members, members info, developers tools, tool
 */
 
-function kc_lat_activate() {
-	if(!get_option('kc_lat')) update_option('kc_lat', array('save' => 1, 'format' => 'F j, Y', 'class' => 'kc_last_active_time'));
-}
-
+function kc_lat_activate() { if(!get_option('kc_lat')) update_option('kc_lat', array('save' => 1, 'format' => 'F j, Y', 'class' => 'kc_last_active_time')); }
 register_activation_hook( __FILE__, 'kc_lat_activate' );
 
 function kc_lat_deactivate() {
@@ -26,7 +23,6 @@ function kc_lat_deactivate() {
 		delete_option('kc_lat');
 	}
 }
-
 register_deactivation_hook( __FILE__, 'kc_lat_deactivate' );
 
 function kc_lat_admin() {
@@ -77,10 +73,10 @@ Same parameter as function kc_lat_get().
 <?php
 }
 
-function kc_lat_adminmenu() {
-	add_options_page("kc_lat", "KC Last Active Time", 1, "kc_lat", "kc_lat_admin");
-}
+function kclat_scripts_method() { wp_enqueue_script("jquery"); }
+add_action('admin_enqueue_scripts', 'kclat_scripts_method');
 
+function kc_lat_adminmenu() { add_options_page("kc_lat", "KC Last Active Time", 'administrator', "kc_lat", "kc_lat_admin"); }
 add_action('admin_menu', 'kc_lat_adminmenu');
 
 # Functions
@@ -88,11 +84,12 @@ add_action('admin_menu', 'kc_lat_adminmenu');
 function kc_lat_get($options) {
 	$rezz = '';
 	if(is_user_logged_in()) {
-		if(!$options['userid'] or $options['userid'] == '') {
+		global $wpdb;
+		if(!isset($options['userid']) or $options['userid'] == '') {
 			global $current_user;
 			$options['userid'] = $current_user->ID;
 		}
-		if(!$kc_lat_options) $kc_lat_options = get_option('kc_lat');
+		if(!isset($kc_lat_options)) $kc_lat_options = get_option('kc_lat');
 		$kclat = date($kc_lat_options['format'], get_user_option($wpdb->prefix."kc_last_active_time", $options['userid']));
 		if(isset($kc_lat_options['class'])) {
 			$rezz .= '<span class="'.$kc_lat_options['class']."\">$kclat</span>";
