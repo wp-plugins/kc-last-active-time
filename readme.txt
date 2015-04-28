@@ -3,8 +3,8 @@ Contributors: krumch
 Donate link: http://krumch.com/kc-last-active-time.html
 Tags: last active time, monitor, active, activity, time, member, members, members info, developers tools, tool
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 20121014
+Tested up to: 4.2
+Stable tag: 20150428
 
 A "last active time" monitor for members.
 
@@ -35,6 +35,9 @@ No questions, so far. Ask me, I will answer.
 
 == Changelog ==
 
+= 20150428 =
+WP versions test
+
 = 20121014 =
 Annoying warnings fixed (we need fun warnings only)
 
@@ -49,6 +52,9 @@ Annoying warnings fixed (we need fun warnings only)
 * The very first versions.
 
 == Upgrade Notice ==
+
+= 20150428 =
+WP versions test
 
 = 20121014 =
 Annoying warnings fixed (we need fun warnings only)
