@@ -3,9 +3,8 @@ Contributors: krumch
 Donate link: http://krumch.com/kc-last-active-time.html
 Tags: last active time, monitor, active, activity, time, member, members, members info, developers tools, tool
 Requires at least: 3.0
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 20150428
-
 A "last active time" monitor for members.
 
 == Description ==
